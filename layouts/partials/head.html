@@ -1,1 +1,6 @@
 <title>{{ .Title }}</title>
+
+{{ $css := resources.Get "scss/main.scss" }}
+{{ $css = $css | toCSS }}
+
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
